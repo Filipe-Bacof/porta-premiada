@@ -1,3 +1,5 @@
+'use client'
+
 import Door from '@/components/Door'
 import DoorModel from '@/model/door'
 import { useState } from 'react'
