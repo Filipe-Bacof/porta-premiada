@@ -2,7 +2,8 @@ import Door from '@/components/Door'
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="flex">
+      <Door />
       <Door />
     </main>
   )
