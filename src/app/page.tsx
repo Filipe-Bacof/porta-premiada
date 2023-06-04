@@ -1,9 +1,9 @@
-import Gift from '@/components/Gift'
+import Door from '@/components/Door'
 
 export default function Home() {
   return (
     <main className="">
-      <Gift />
+      <Door />
     </main>
   )
 }

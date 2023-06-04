@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        'door-hei': '310px',
+        'door-wid': '200px',
+      },
       colors: {
         'lime-matte': '#7aa944',
         'lime-moss': '#5c7e32',
