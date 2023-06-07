@@ -1,4 +1,5 @@
 import DoorModel from '@/model/door'
+import Gift from './Gift'
 
 type DoorProps = {
   value: DoorModel
@@ -41,13 +42,13 @@ export default function Door(props: DoorProps) {
       onClick={alterSelection}
     >
       <div
-        className={`flex w-[90%] grow border-l-[5px] border-r-[5px] border-t-[5px] bg-[#0005] ${
+        className={`flex w-[90%] grow flex-col-reverse border-l-[5px] border-r-[5px] border-t-[5px] bg-[#0005] ${
           door.selected && !door.opened
             ? 'border-yellow-400'
             : 'border-amber-800'
         }`}
       >
-        {door.opened ? false : renderDoor()}
+        {door.closed ? renderDoor() : door.hasGift ? <Gift /> : false}
       </div>
       <div className="h-[10px] w-full bg-slate-300"></div>
     </div>
