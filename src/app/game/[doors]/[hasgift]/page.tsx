@@ -3,11 +3,20 @@
 
 import { createDoors, updateDoors } from '@/functions/doors'
 import Door from '@/components/Door'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import DoorModel from '@/model/door'
+import { usePathname } from 'next/navigation'
 
-export default function game() {
-  const [doors, setDoors] = useState(createDoors(4, 3))
+export default function Game() {
+  const [doors, setDoors] = useState<DoorModel[]>([])
+  const pathname = usePathname()
+  useEffect(() => {
+    const pathPieces = pathname.split('/')
+    const doorsCount = Number(pathPieces[2])
+    const hasGift = Number(pathPieces[3])
+    setDoors(createDoors(doorsCount, hasGift))
+  }, [pathname])
 
   function renderDoors() {
     return doors.map((door) => {
