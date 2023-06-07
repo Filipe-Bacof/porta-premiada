@@ -1,12 +1,20 @@
 import DoorModel from '@/model/door'
 
 type DoorProps = {
-  door: DoorModel
+  value: DoorModel
+  onChange: (newDoor: DoorModel) => void
 }
 
-export default function Door({ door }: DoorProps) {
+export default function Door(props: DoorProps) {
+  const door = props.value
+
+  const alterSelection = () => props.onChange(door.alterSelection())
+
   return (
-    <div className="relative m-[5px] flex h-door-hei w-door-wid flex-col items-center">
+    <div
+      className="relative m-[5px] flex h-door-hei w-door-wid flex-col items-center"
+      onClick={alterSelection}
+    >
       <div
         className={`flex w-[90%] grow border-l-[5px] border-r-[5px] border-t-[5px] ${
           door.selected ? 'border-yellow-400' : 'border-amber-800'
