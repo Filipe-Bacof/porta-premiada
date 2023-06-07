@@ -44,17 +44,21 @@ export default function Game() {
   }
 
   return (
-    <div className="flex h-[100vh] flex-col items-center justify-center">
+    <div className="mt-16 flex flex-col items-center justify-center">
       <div className="flex flex-wrap justify-around self-stretch">
         {isValid ? (
           renderDoors()
         ) : (
-          <h2 className="text-[4rem]">Valores Inválidos</h2>
+          <div className="flex flex-col text-center">
+            <h2 className="text-[4rem]">Valores Inválidos</h2>
+            <p className="text-[2rem]">O prêmio deve ser válido!</p>
+            <p className="text-[2rem]">Máximo 30 portas!</p>
+          </div>
         )}
       </div>
       <div className="mt-[40px] flex justify-center">
         <Link href="/">
-          <button className="border-none bg-btn px-[25px] py-[10px] text-[2rem] text-white hover:bg-red-800">
+          <button className="mb-32 border-none bg-btn px-[25px] py-[10px] text-[2rem] text-white hover:bg-red-800">
             Reiniciar Jogo
           </button>
         </Link>

@@ -10,8 +10,8 @@ export default function Home() {
   const [withGift, setWithGift] = useState(1)
 
   return (
-    <main className="flex h-[100vh] flex-col items-center justify-center p-5 text-[3rem]">
-      <div className="m-[3px] flex gap-[6px]">
+    <main className="flex flex-col items-center justify-center p-5 text-[3rem] md:mt-8">
+      <div className="m-[3px] flex flex-col gap-[6px] md:flex-row">
         <Card bgcolor="bg-btn">
           <h1 className="h-[300px] w-[300px] cursor-default pt-[120px] text-center">
             Monty Hall
@@ -25,7 +25,7 @@ export default function Home() {
           />
         </Card>
       </div>
-      <div className="m-[3px] flex gap-[6px]">
+      <div className="m-[3px] flex flex-col gap-[6px] md:flex-row">
         <Card>
           <InputNumber
             text="Porta Premiada?"
@@ -41,6 +41,11 @@ export default function Home() {
           </Link>
         </Card>
       </div>
+      <Link href={'/about'}>
+        <h2 className="h-[300px] w-[300px] pt-[120px] text-center text-[2rem] text-blue-600 underline md:pt-[32px]">
+          O que é Monty Hall
+        </h2>
+      </Link>
     </main>
   )
 }
