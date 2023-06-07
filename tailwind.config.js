@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         'lime-matte': '#7aa944',
         'lime-moss': '#5c7e32',
+        btn: '#c0392c',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

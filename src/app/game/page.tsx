@@ -4,6 +4,7 @@
 import { createDoors, updateDoors } from '@/functions/doors'
 import Door from '@/components/Door'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function game() {
   const [doors, setDoors] = useState(createDoors(4, 3))
@@ -27,7 +28,13 @@ export default function game() {
       <div className="flex flex-wrap justify-around self-stretch">
         {renderDoors()}
       </div>
-      <div className=""></div>
+      <div className="mt-[40px] flex justify-center">
+        <Link href="/">
+          <button className="border-none bg-btn px-[25px] py-[10px] text-[2rem] text-white hover:bg-red-800">
+            Reiniciar Jogo
+          </button>
+        </Link>
+      </div>
     </div>
   )
 }

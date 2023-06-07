@@ -19,7 +19,7 @@ export default function Door(props: DoorProps) {
     return (
       <div className="flex grow flex-col items-center bg-orange-600 p-[15px]">
         <div
-          className={`text-5xl ${
+          className={`cursor-default text-5xl ${
             door.selected && !door.opened && 'text-yellow-400'
           }`}
         >
@@ -27,7 +27,7 @@ export default function Door(props: DoorProps) {
         </div>
 
         <div
-          className={`absolute top-[140px] flex h-5 w-5 self-start rounded-full ${
+          className={`absolute top-[140px] flex h-5 w-5 cursor-pointer self-start rounded-full ${
             door.selected && !door.opened ? 'bg-yellow-400' : 'bg-amber-900'
           }`}
           onClick={openDoor}
