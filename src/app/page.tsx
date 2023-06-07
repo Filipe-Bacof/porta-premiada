@@ -1,21 +1,40 @@
+'use client'
+
 import Card from '@/components/Card'
 import Link from 'next/link'
+import InputNumber from '@/components/InputNumber'
+import { useState } from 'react'
 
 export default function Home() {
+  const [doors, setDoors] = useState(3)
+  const [withGift, setWithGift] = useState(1)
+
   return (
-    <main className="m-[3px] flex h-[100vh] items-center justify-center p-5 text-[3rem]">
-      <div className="">
+    <main className="flex h-[100vh] flex-col items-center justify-center p-5 text-[3rem]">
+      <div className="m-[3px] flex gap-[6px]">
         <Card bgcolor="bg-btn">
           <h1 className="h-[300px] w-[300px] cursor-default pt-[120px] text-center">
             Monty Hall
           </h1>
         </Card>
-        <Card></Card>
+        <Card>
+          <InputNumber
+            text="Quantidade de Portas?"
+            value={doors}
+            onChange={(newNumber: number) => setDoors(newNumber)}
+          />
+        </Card>
       </div>
-      <div className="">
-        <Card></Card>
+      <div className="m-[3px] flex gap-[6px]">
+        <Card>
+          <InputNumber
+            text="Porta Premiada?"
+            value={withGift}
+            onChange={(newNumber: number) => setWithGift(newNumber)}
+          />
+        </Card>
         <Card bgcolor="bg-grass-green">
-          <Link href={`/game/3/2`}>
+          <Link href={`/game/${doors}/${withGift}`}>
             <h2 className="h-[300px] w-[300px] pt-[120px] text-center">
               Iniciar
             </h2>
