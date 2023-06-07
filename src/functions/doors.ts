@@ -7,3 +7,18 @@ export function createDoors(amount: number, selected: number): DoorModel[] {
     return new DoorModel(num, hasGift)
   })
 }
+
+export function updateDoors(
+  doors: DoorModel[],
+  modifiedDoor: DoorModel,
+): DoorModel[] {
+  return doors.map((actualDoor) => {
+    const sameAsModifiedDoor = actualDoor.doorNumber === modifiedDoor.doorNumber
+
+    if (sameAsModifiedDoor) {
+      return modifiedDoor
+    } else {
+      return modifiedDoor.opened ? actualDoor : actualDoor.desselect()
+    }
+  })
+}
